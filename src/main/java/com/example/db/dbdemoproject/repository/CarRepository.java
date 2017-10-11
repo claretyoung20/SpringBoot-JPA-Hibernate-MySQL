@@ -8,4 +8,5 @@ import java.util.List;
 
 @Repository
 public interface CarRepository extends CrudRepository<Car, Integer> {
+     List<Car> findByPersonId(int personId);
 }

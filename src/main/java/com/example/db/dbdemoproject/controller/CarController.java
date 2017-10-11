@@ -16,26 +16,30 @@ public class CarController {
 
     @RequestMapping(value = "/car/{id}/model/{mid}", method = RequestMethod.POST)
     public void save(@RequestBody Car car, @PathVariable int id, @PathVariable int mid){
-        car.setCarmodelId(new Carmodel(mid, ""));
-        car.setPersonId(new Person(id,"",""));
+        car.setCarmodel(new Carmodel(mid, ""));
+        car.setPerson(new Person(id,"",""));
 
         carService.save(car);
     }
 
     @RequestMapping(value = "/car")
     public List<Car> findAll(){
-        return carService.findall();
+        return carService.findAll();
     }
 
     @RequestMapping(value = "car/{id}", method = RequestMethod.GET)
     public Car getOne(@PathVariable int id){
         return carService.getOne(id);
     }
+    @RequestMapping(value = "car/person/{id}", method = RequestMethod.GET)
+    public List<Car> getByPersonId(@PathVariable int id){
+        return carService.getByPersonId(id);
+    }
 
     @RequestMapping(value = "car/{id}/model/{mid}/{cid}", method = RequestMethod.PUT)
     public void update(@RequestBody Car car, @PathVariable int id, @PathVariable int mid, @PathVariable int cid){
-        car.setCarmodelId(new Carmodel(mid, ""));
-        car.setPersonId(new Person(id,"",""));
+        car.setCarmodel(new Carmodel(mid, ""));
+        car.setPerson(new Person(id,"",""));
         car.setId(cid);
          carService.update(car);
     }

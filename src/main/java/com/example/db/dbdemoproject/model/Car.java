@@ -16,20 +16,20 @@ public class Car {
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "personId")
-    private Person personId;
+    private Person person;
 
     @ManyToOne(optional = false)
     @JoinColumn(name = "carmodelId")
-    private Carmodel carmodelId;
+    private Carmodel carmodel;
 
     public Car() {
     }
 
-    public Car(int id, String carName, Person personId, Carmodel carmodelId) {
+    public Car(int id, String carName, Person person, Carmodel carmodel) {
         this.id = id;
         this.carName = carName;
-        this.personId = personId;
-        this.carmodelId = carmodelId;
+        this.person = person;
+        this.carmodel = carmodel;
     }
 
     public int getId() {
@@ -48,19 +48,19 @@ public class Car {
         this.carName = carName;
     }
 
-    public Person getPersonId() {
-        return personId;
+    public Person getPerson() {
+        return person;
     }
 
-    public void setPersonId(Person personId) {
-        this.personId = personId;
+    public void setPerson(Person person) {
+        this.person = person;
     }
 
-    public Carmodel getCarmodelId() {
-        return carmodelId;
+    public Carmodel getCarmodel() {
+        return carmodel;
     }
 
-    public void setCarmodelId(Carmodel carmodelId) {
-        this.carmodelId = carmodelId;
+    public void setCarmodel(Carmodel carmodel) {
+        this.carmodel = carmodel;
     }
 }
