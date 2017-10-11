@@ -21,6 +21,11 @@ public class PersonService {
         return person;
     }
 
+    public List<Person> getF(){
+        List<Person> person = new ArrayList<>();
+        personRepository.findD().forEach(person::add);
+        return person;
+    }
 
     public Person getOne(String id) {
         return personRepository.findOne(id);

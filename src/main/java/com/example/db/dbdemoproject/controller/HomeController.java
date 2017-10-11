@@ -18,6 +18,12 @@ public class HomeController {
         return personService.getAll();
     }
 
+    @RequestMapping(value = "persons", method = RequestMethod.GET)
+    public List<Person> getAllD(){
+        return personService.getF();
+    }
+
+
     @RequestMapping(value = "person/{id}", method = RequestMethod.GET)
     public Person getOne(@PathVariable String id){
         return personService.getOne(id);
