@@ -29,4 +29,8 @@ public class CarService {
         return carRepository.findOne(id);
     }
 
+    public void update(Car car){
+        carRepository.save(car);
+    }
+
 }

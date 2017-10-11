@@ -32,4 +32,12 @@ public class CarController {
         return carService.getOne(id);
     }
 
+    @RequestMapping(value = "car/{id}/model/{mid}/{cid}", method = RequestMethod.PUT)
+    public void update(@RequestBody Car car, @PathVariable int id, @PathVariable int mid, @PathVariable int cid){
+        car.setCarmodelId(new Carmodel(mid, ""));
+        car.setPersonId(new Person(id,"",""));
+        car.setId(cid);
+         carService.update(car);
+    }
+
 }
