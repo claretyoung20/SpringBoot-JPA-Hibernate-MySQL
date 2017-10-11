@@ -1,6 +1,5 @@
 package com.example.db.dbdemoproject.model;
 
-import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
 

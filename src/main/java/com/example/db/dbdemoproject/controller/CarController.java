@@ -24,8 +24,8 @@ public class CarController {
 
     @RequestMapping(value = "/car")
     public List<Car> findAll(){
-
         return carService.findall();
     }
+
 
 }
