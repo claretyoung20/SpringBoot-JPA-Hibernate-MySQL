@@ -27,5 +27,9 @@ public class CarController {
         return carService.findall();
     }
 
+    @RequestMapping(value = "car/{id}", method = RequestMethod.GET)
+    public Car getOne(@PathVariable int id){
+        return carService.getOne(id);
+    }
 
 }
