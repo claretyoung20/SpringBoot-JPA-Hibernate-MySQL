@@ -1,6 +1,7 @@
 package com.example.db.dbdemoproject.controller;
 import com.example.db.dbdemoproject.model.Person;
 import com.example.db.dbdemoproject.services.PersonService;
+import com.example.db.dbdemoproject.services.dto.PersonDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,7 +26,7 @@ public class HomeController {
 
 
     @RequestMapping(value = "person/{id}", method = RequestMethod.GET)
-    public Person getOne(@PathVariable String id){
+    public PersonDTO getOne(@PathVariable int id){
         return personService.getOne(id);
     }
 

@@ -22,7 +22,7 @@ public class CarController {
         carService.save(car);
     }
 
-    @RequestMapping(value = "/car")
+    @GetMapping(value = "/car")
     public List<Car> findAll(){
         return carService.findAll();
     }
